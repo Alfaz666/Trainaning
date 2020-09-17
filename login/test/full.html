@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script> 
+// DROPDOWN 
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle();
+  });
+});
+
+// DROPDOWN-DATA ITEM
+$(document).ready(function(){
+    $("#b1").click(function(){
+        $("#Home").load("data/demo_test.txt");
+    });
+    $("#b2").click(function(){
+        $("#News").load("data/demo_test2.txt");
+    });
+    $("#b3").click(function(){
+        $("#Contact").load("data/mm.txt");
+    });
+    $("#b4").click(function(){
+        $("#About").load("data/a.txt");
+    });
+});
+</script>
+<style>
+#Home {background-color: rgb(52, 199, 204);}
+#News {background-color: grey;}
+#Contact {background-color: grey;}
+#About {background-color: grey;}
+#panel{display: none;}
+</style>
+</head>
+
+<body>
+    <div class="btn-group" id="flip">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Large button
+        </button>
+        <div class="dropdown-menu" id="panel">
+            <div class="btn-group-vertical">
+                <button id="b1" class="dropdown-item" onclick="openPage('Home')">Home</button>
+                <button id="b2" class="dropdown-item" onclick="openPage('News')">News</button>
+                <button id="b3" class="dropdown-item" onclick="openPage('Contact')">Contact</button>
+                <button id="b4" class="dropdown-item" onclick="openPage('About')">About</button>
+            </div>
+        </div>
+      </div>
+
+<div id="Home" class="container" style="border-radius: 10px;"></div>
+
+<div id="News" class="container"></div>
+
+<div id="Contact" class="container"></div>
+
+<div id="About" class="container"></div>
+
+<script>
+function openPage(pageName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("container");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("dropdown-item");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "";
+  }
+  document.getElementById(pageName).style.display = "block";
+}
+</script>
+   
+</body>
+</html> 

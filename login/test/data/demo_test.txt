@@ -1,0 +1,5 @@
+<table border="1px solid black">
+    <tr>
+        <th><img src="../gambar/kartun/spong.png" padding="20px"></th>
+    </tr>
+</table>

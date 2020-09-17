@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+    .kiri{
+        width: 100px;
+    }
+    .tengah{
+        width: 1400px;
+    }
+    .kanan{
+        width: 100px;
+    }
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="row justify-content-start">
+                <div class="kiri">
+                    <div class="float-left">
+                        <button id="openNav" type="button" class="btn btn-light" onclick="w3_open()">&#9776;</button>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="tengah" style="text-align: center; font-size:20px;"><b>Home</b></div>
+                </div>
+                <div class="row justify-content-end">
+                    <div class="kanan">
+                        <div class="float-right">
+                            <a href="../login.php" class="btn btn-light" role="button" aria-pressed="true" >Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</body>
+</html>

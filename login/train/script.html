@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+</head>
+<body>
+
+
+
+
+    <!--<p>Harga : $500 </p>
+                        <p>Jumlah : <input type="number" name="jumlah" id="jumlah" class="form-control" onkeyup="sum();"></p>
+                        <input type="text" name="total" id="total" class="form-control" Readonly >
+        <br><br> -->
+
+    Jumlah barang     :<input type="number" id="jumlah_barang" ><br><br>
+    Harga barang    : 500
+    <button type="button" name="submit" onclick="klik()">Submit</button>
+    <div id="buka"></div>
+
+        <br><br>
+
+    <p>Harga : $500</p>
+    Uang Anda : <input type="number" name="jumlah" id="jumlah" class="form-control" ><br><br>
+    
+    <input type="submit" name="submit" id="submit" onclick="a();">
+    
+    <script>
+/*function sum() {
+        var a = 500;
+        var b = document.getElementById('jumlah').value;
+        var result = parseInt(a) * parseInt(b);
+        if (!isNaN(result)) {
+            document.getElementById('total').value =  result;
+        }
+}*/
+
+
+        var aa      = 500;
+        var bb      = ['jumlah'] ;
+        var total   = aa *  bb;
+        var sisa    = 0;
+        function klik(){
+            echo ("total");
+        };
+
+
+        //if (uang == harga_barang ){
+        //    document.getElementById("buka").innerHTML = "transaksi berhasil";
+        //} else {
+        //    alert('uang tidak cukup');
+        //}
+        function a() {
+        var a = 500 ;
+        var b = document.getElementById('jumlah').value;
+        var result = b - a;
+
+        if ( result == 0) {
+            alert("transaksi berhasil");
+        } else if ( result >= 0) {
+            alert("transaksi berhasil, kembalian : $" + result);    
+        } else if ( result == -500){
+            alert("masukan jumlah uang anda")
+        }
+        else {
+            alert("uang anda kurang " + result + "($)");
+        }
+        }
+    
+    </script>
+</body>
+</html>

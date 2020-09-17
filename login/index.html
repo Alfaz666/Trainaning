@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="template.css">
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.min.css">
+    <script src="bootstrap-4.5.2-dist/js/bootstrap.min.js"></script>
+    
+</head>
+<style>
+      /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+  .ukur{
+    width: 100%;
+    background-color:darkgray;
+  }
+  
+</style>
+<body>
+    <div class="header-gray">
+        <p style="color:white; padding-top:5px; padding-left: 5px;">www.hoopla.com</p>
+    </div>
+    <div class="header-gray2">
+        <button type="submit" style="float: right; margin-top:5px; margin-right: 5px;"><i class="fas fa-search"></i></button>
+        <input type="text" placeholder="Search.." name="search" style="float: right; margin-top:5px; margin-right: 5px;">
+    </div>
+    <div class="header">
+        <p style="font-size:36px;"><b>Welcome to Hoopla</b></p>
+    </div>
+    <div class="kanan">
+        <div class="log">
+            <a href="login.php" style="text-decoration: none; color: black; margin-left: 7px; margin-right: 40px; float: right;">Login</a>
+        </div>
+        <div class="reg">
+            <a href="register.php" style="text-decoration: none; color: black; float: right;">Register</a>
+        </div>
+    </div>
+    <div class="spasia"></div>
+    <div class="spasia2"></div>
+    <div class="spasia2"></div>
+    
+
+    <!-- isi template -->
+      <div class="body">
+        
+        <marquee direction="right" scrollamount="20" >
+            <table class="tab">
+                <tr>
+                    <th><p style="font-size: 26px;"><b>Sponge PROMO 100% untuk hari ini</b></p></th>
+                    <th><img src="gambar/run1.png" ></th>
+                </tr>
+            </table>
+        </marquee>
+        <h1 style="font-size: 48px;" align="center">JUDUL</h1>
+        <div class="spasia2"></div>
+        <div class="text">
+            <p style="font-size: 26px;"><b>Lorem ipsum dolor sit amet</b></p>
+            <p style="font-size: 20px; text-align: justify;"><Tab></Tab>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <br>
+                <Tab></Tab>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div class="spasia"></div>
+        <div class="kotak-1">
+            <div class="icon" >
+                <img src="gambar/Hoopla.png" alt="11" width="200px" height="200px"><br>
+            </div>
+            <p class="kata-kotak1" align="center">Banyak bacaannya-Banyak bacaannya-Banyak bacaannya-Banyak bacaannya-Banyak bacaannya</p>
+        </div>
+        <div class="kotak-2">
+            <div class="icon2" >
+                <img src="gambar/Hoopla-bata.png" alt="11" width="200px" height="200px"><br>
+            </div>
+            <p class="kata-kotak2" align="center">Banyak bacaannya-Banyak bacaannya-Banyak bacaannya-Banyak bacaannya-Banyak bacaannya</p>
+        </div>
+        <div class="kotak-3">
+            <div class="icon3" >
+                <img src="gambar/spong.png" alt="11" width="200px" height="200px"><br>
+            </div>
+            <p class="kata-kotak3" align="center">Banyak bacaannya-Banyak bacaannya-Banyak bacaannya-Banyak bacaannya-Banyak bacaannya</p>
+        </div>
+        <div class="spasia"></div> 
+        <div class="spasia"></div>
+        <div class="spasia"></div>
+        
+        <!-- GAMBAR BARANG -->
+        
+        <div class="ukur">
+          <h2 style="text-align:center">Daftar</h2>
+
+        <div class="container">
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/bobpat.png" style="width: 20%;">
+        </div>
+    
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/crab.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/Hoopla-bata.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/Hoopla.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/log-sandar.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/mocking_spongebob.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/mocking_spongebob1.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/money.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/patbob.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/patrick.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/patrik.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/reg-sandar.png" style="width: 20%;">
+        </div>
+        
+        <div class="mySlides" align="center">
+        <div class="numbertext"></div>
+        <img src="gambar/kartun/spong.png" style="width: 20%;">
+        </div>
+        
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        </div>
+        </div>
+        
+        
+        <div class="a1">
+            <p>Pembayaran</p><br>
+            <img src="gambar/download (1).png" style="width: 108px; margin-right: 20px;">
+            <img src="gambar/download (2).png" style="width: 108px; margin-right: 20px;">
+            <img src="gambar/download (3).png" style="width: 108px;"><br>
+            <img src="gambar/cod-credit-debit-card-bank-transaction-3-32322.png" style="width: 108px;">
+        </div>
+        <div class="a2">
+            <p>Jasa Pengiriman</p><br>
+            <img src="gambar/download (4).png" style="width: 108px; margin-right: 20px; margin-bottom: 10px;">
+            <img src="gambar/download (5).png" style="width: 108px; margin-right: 20px;">
+            <img src="gambar/download (6).png" style="width: 108px; margin-right: 20px;">
+            <img src="gambar/download (7).png" style="width: 108px; margin-right: 20px;"><br>
+            <img src="gambar/download.jpg" style="width: 108px; margin-right: 20px; ">
+        </div>
+        
+      </div>
+    <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. -->
+    
+    <div class="spasia2"></div>
+
+
+        <!-- isi template -->
+<div class="footer">
+    <div class="about">
+        <div class="about2">
+            <p style="font-size:36px; color:whitesmoke; padding: 10px;">About</p>
+            <p style="font-size: 18px;  color:whitesmoke;">Alamat : Jln.abdul-badul no.1 desa.adul kec.batur kab.cianur</p>
+            <p style="font-size: 18px;  color:whitesmoke;">Kode Pos : 45XXX</p>
+            <p style="font-size: 18px;  color:whitesmoke;">Email : abdul@mail.com</p>
+            <p style="font-size: 18px;  color:whitesmoke;">No Telp : 089766670xxx</p>
+            
+        </div>
+    </div>
+    <div class="about2-2">
+      <a href="#" style="font-size: 42px; color:whitesmoke;"><i class="fab fa-facebook-square"> facebook</i></a><br>
+      <a href="#" style="font-size: 42px; color:whitesmoke;"><i class="fab fa-instagram-square"> instagram</i></a><br>
+      <a href="#" style="font-size: 42px; color:whitesmoke;"><i class="fab fa-twitter-square"> twitter</i></a>
+    </div>
+</div>
+
+
+
+
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
+    </script>
+
+
+</body>
+</html>

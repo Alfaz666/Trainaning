@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .spasi{
+        height: 100px;
+    }
+    .aa{
+        width: 200px;
+    }
+    .a{
+        width: 10px;
+        text-align: right;
+    }
+</style>
+<body>
+    <div class="spasi"></div>
+    <div class="container" style="padding:30px; border:1px solid grey; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.2); border-radius: 7px;">
+        <h1 style="text-align: center;">Form Pembelian</h1>
+        <table class="table">
+            <tr>
+                <th class="aa"><p>Harga Barang</p></th>
+                <th class="a">:</th>
+                <th>$ 500</th>
+            </tr>
+            <tr>
+                <th><p>Jumlah Barang</p></th>
+                <th class="a">:</th>
+                <th><input  name="jumlah_barang" id="jumlah_barang" class="form-control" onkeyup="sum();"></th>
+            </tr>
+            <tr>
+                <th><p>Total</p></th>
+                <th class="a">:</th>
+                <th><input name="total" id="total" class="form-control" readonly></th>
+            </tr>
+            <tr>
+                <th><p>Jumlah Uang</p></th>
+                <th class="a">:</th>
+                <th><input name="jumlah_uang" id="jumlah_uang" class="form-control"></th>
+            </tr>
+            <tr>
+                <th><p>Kembalian</p></th>
+                <th class="a">:</th>
+                <th><input name="kembalian" id="kembalian" class="form-control" readonly></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th style="float: right;"><input type="submit" name="submit" id="beli" class="btn btn-primary" onclick="klik()"></th>
+            </tr>
+
+        </table>
+    </div>
+
+<script>
+function sum() {
+    var a = 500;
+    var b = document.getElementById('jumlah_barang').value;
+    var result = parseInt(a) * parseInt(b);
+    if (!isNaN(result)) {
+        document.getElementById('total').value = result;
+    }
+}
+
+var uang = ["jumlah_uang"];
+var kembalian = ["kembalian"];
+
+
+</script>
+</body>
+</html>
