@@ -17,10 +17,13 @@
     .spasi{
         height: 100px;
     }
-    .aa{
+    .pass{
+        width: 825px;
+    }
+    .kol1{
         width: 200px;
     }
-    .a{
+    .kol2{
         width: 10px;
         text-align: right;
     }
@@ -31,52 +34,84 @@
         <h1 style="text-align: center;">Form Pembelian</h1>
         <table class="table">
             <tr>
-                <th class="aa"><p>Harga Barang</p></th>
-                <th class="a">:</th>
-                <th>$ 500</th>
+                <th class="kol1"><p>Pilih Barang</p></th>
+                <th class="kol2">:</th>
+                <th><form>
+                        <label for="harga" class="pass">
+                            <select id="harga" name="harga" class="form-control">
+                                <option id="harga1" name="harga1" value="500" onclick="drop();">satu</option>
+                                <option id="harga2" name="harga2" value="400" onclick="drop();">dua</option>
+                                <option id="harga3" name="harga3" value="300" onclick="drop();">tiga</option>
+                                <option id="harga4" name="harga4" value="200" onclick="drop();">empat</option>
+                            </select>
+                        </label>
+                    </form>
+                </th>
             </tr>
+            <tr>
+                <th><p>Harga Barang</p></th>
+                <th>:</th>
+                <th><input id="cul" class="form-control" readonly></tr>
+            <tr>
             <tr>
                 <th><p>Jumlah Barang</p></th>
-                <th class="a">:</th>
+                <th class="kol2">:</th>
                 <th><input  name="jumlah_barang" id="jumlah_barang" class="form-control" onkeyup="sum();"></th>
             </tr>
-            <tr>
                 <th><p>Total</p></th>
-                <th class="a">:</th>
+                <th class="kol2">:</th>
                 <th><input name="total" id="total" class="form-control" readonly></th>
             </tr>
             <tr>
                 <th><p>Jumlah Uang</p></th>
-                <th class="a">:</th>
-                <th><input name="jumlah_uang" id="jumlah_uang" class="form-control"></th>
+                <th class="kol2">:</th>
+                <th><input name="jumlah_uang" id="jumlah_uang" class="form-control" onkeyup="sum();"></th>
             </tr>
             <tr>
                 <th><p>Kembalian</p></th>
-                <th class="a">:</th>
+                <th class="kol2">:</th>
                 <th><input name="kembalian" id="kembalian" class="form-control" readonly></th>
             </tr>
             <tr>
                 <th></th>
                 <th></th>
-                <th style="float: right;"><input type="submit" name="submit" id="beli" class="btn btn-primary" onclick="klik()"></th>
+                <th style="float: right;"><button type="submit" name="submit" id="beli" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="klik()">Submit</button></th>
             </tr>
-
         </table>
     </div>
 
+    
+
 <script>
-function sum() {
-    var a = 500;
-    var b = document.getElementById('jumlah_barang').value;
-    var result = parseInt(a) * parseInt(b);
-    if (!isNaN(result)) {
-        document.getElementById('total').value = result;
-    }
+function drop(){
+    var satu = 500;
+        document.getElementById('cul').value = satu;
 }
 
-var uang = ["jumlah_uang"];
-var kembalian = ["kembalian"];
-
+function sum() {
+    var a = document.getElementById('harga').value;
+    var b = document.getElementById('jumlah_barang').value;
+    var total= parseInt(a) * parseInt(b);
+    var c = document.getElementById('jumlah_uang').value;
+    var d = parseInt(c) - total;
+        if (!isNaN(total)) {
+            document.getElementById('total').value = total;
+        } 
+        if (!isNaN(d) ) {
+            document.getElementById('kembalian').value = d;
+        } 
+}
+function klik() {
+    d = document.getElementById('kembalian').value;
+        if ( d >= 0){
+            alert("Transaksi Berhasil");
+        } else if ( d < 0){
+            alert("Uang Kurang : " + d);
+        } 
+        else {
+            alert("Transaksi Gagal");
+        }
+}
 
 </script>
 </body>

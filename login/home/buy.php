@@ -4,10 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Views</title>
-    <link rel="stylesheet" type="text/css" href="style-views.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -16,6 +14,7 @@
     *{
 		margin:0;
 		padding:0;
+        font-family: Arial;
 	}
 	.container-fluid{
 		background-color: rgba(248,248,248 );
@@ -30,6 +29,19 @@
     }
     .cen{
         text-align:center;
+    }
+    .spasi{
+        height: 100px;
+    }
+    .pass{
+        width: 825px;
+    }
+    .kol1{
+        width: 200px;
+    }
+    .kol2{
+        width: 10px;
+        text-align: right;
     }
 </style>
 <body>
@@ -76,141 +88,55 @@
 			</div>
 		</div>
 	</div>
-    <div class="spasi" style="height:100px;"></div>
-    <div class="container" >
-        <div class="row" align="center">
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
-                <img src="../gambar/kartun/bobpat.png" alt="1" width="70%">
-                <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Buy</button>
-            </div>
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
-                <img src="../gambar/kartun/crab.png" alt="2" width="70%">
-                <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">Buy</button>
-            </div>
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
-                <img src="../gambar/kartun/Hoopla-bata.png" alt="3" width="70%">
-                <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Buy</button>
-            </div>
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
-                <img src="../gambar/kartun/Hoopla.png" alt="4" width="70%">
-                <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">Buy</button>
-            </div>
-        </div>
-    </div>
-
-
-    <!-- OPEN MODAL!!! -->
-    <div class="modal fade" id="myModal" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header"><p style="font-size:24px;">Bobpat</p>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" align="center">
-                    <img src="../gambar/kartun/bobpat.png" alt="1" >
-                </div>
-                    <div class="modal-footer">
-                        <p>Harga : $500 </p>
-                        <p>Jumlah : <input type="number" name="jumlah" id="jumlah" class="form-control" onkeyup="sum();"></p>
-                        <input type="text" name="total" id="total" class="form-control" Readonly >
-                        <p>Uang : <input type="number" name="uang" id="uang" class="form-control"></p>
-                        
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary" onclick="sum()">Buy</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="myModal2" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header"><p style="font-size:24px;">Mr.Crab</p>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" align="center">
-                    <img src="../gambar/kartun/crab.png" alt="2">
-                    <br>Mr.Crab Is Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, porro. 
-                    Sapiente id dolore est, ut ipsam magnam harum, ratione enim qui dolor cumque quia quod repellendus 
-                    voluptatibus omnis. Nesciunt, molestiae!
-                </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <a href="buy.php" type="button" class="btn btn-primary">Buy</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="myModal3" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header"><p style="font-size:24px;">Hoopla-Bata</p>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" align="center">
-                    <img src="../gambar/kartun/Hoopla-bata.png" alt="3" >
-                    <br>Mr.Crab Is Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, porro. 
-                    Sapiente id dolore est, ut ipsam magnam harum, ratione enim qui dolor cumque quia quod repellendus 
-                    voluptatibus omnis. Nesciunt, molestiae!
-                </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="myModal4" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header"><p style="font-size:24px;">Hoopla</p>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" align="center">
-                    <img src="../gambar/kartun/Hoopla.png" alt="4" >
-                </div>
-                    <div class="modal-footer">
-                        <form method="POST" >
-                            <table border="1px solid black"  width="330px">
-                                <tr class="cen">
-                                    <td>Harga</td>
-                                    <td>
-                                        <select name="qty">
-                                            <option value=""> Jumlah </option>
-                                            <?php
-                                                for($x=1;$x<=50;$x++){
-                                            ?>
-                                            <option value="<?php echo $x; ?>"><?php echo $x; ?></option>
-                                            <?php
-                                                }
-                                            ?>
-                                        </select>
-                                    </td>
-                                    <td>Total</td>
-                                </tr>
-                                <tr class="cen">
-                                    <td>$500</td>
-                                    <td>
-                                        <input type="submit" name="hitung" value="Hitung">
-                                        <input type="reset" name="reset" value="Reset">
-                                    </td>
-                                    <td>$
-                                    <?php
-                                        if(isset($_POST['hitung'])){
-                                            $harga    = 500;
-                                            $qty    =$_POST['qty'];
-                                            $total    =$harga*$qty;
-                                            echo number_format($total);
-                                        }
-                                    ?>      
-                                    </td>
-                                </tr>
-                            </table>
-                        </form>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Buy</button>
-                </div>
-            </div>
-        </div>
+    <div class="spasi"></div>
+    <div class="container" style="padding:30px; border:1px solid grey; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.2); border-radius: 7px;">
+        <h1 style="text-align: center;">Form Pembelian</h1>
+        <table class="table">
+            <tr>
+                <th class="kol1"><p>Pilih Barang</p></th>
+                <th class="kol2">:</th>
+                <th><form>
+                        <label for="harga" class="pass">
+                            <select id="harga" name="harga" class="form-control">
+                                <option id="harga1" name="harga1" value="500" onclick="drop();">satu</option>
+                                <option id="harga2" name="harga2" value="400" onclick="drop();">dua</option>
+                                <option id="harga3" name="harga3" value="300" onclick="drop();">tiga</option>
+                                <option id="harga4" name="harga4" value="200" onclick="drop();">empat</option>
+                            </select>
+                        </label>
+                    </form>
+                </th>
+            </tr>
+            <tr>
+                <th><p>Harga Barang</p></th>
+                <th>:</th>
+                <th><input id="cul" class="form-control" readonly></tr>
+            <tr>
+            <tr>
+                <th><p>Jumlah Barang</p></th>
+                <th class="kol2">:</th>
+                <th><input  name="jumlah_barang" id="jumlah_barang" class="form-control" onkeyup="sum();"></th>
+            </tr>
+                <th><p>Total</p></th>
+                <th class="kol2">:</th>
+                <th><input name="total" id="total" class="form-control" readonly></th>
+            </tr>
+            <tr>
+                <th><p>Jumlah Uang</p></th>
+                <th class="kol2">:</th>
+                <th><input name="jumlah_uang" id="jumlah_uang" class="form-control" onkeyup="sum();"></th>
+            </tr>
+            <tr>
+                <th><p>Kembalian</p></th>
+                <th class="kol2">:</th>
+                <th><input name="kembalian" id="kembalian" class="form-control" readonly></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th style="float: right;"><button type="submit" name="submit" id="beli" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="klik()">Submit</button></th>
+            </tr>
+        </table>
     </div>
 
                   
@@ -218,19 +144,33 @@
 
 
 <script>
-// ALERT
-//function klik(){
-//}
+function drop(){
+    var satu = 500;
+        document.getElementById('cul').value = satu;
+}
 
-
-// HARGA
 function sum() {
-        var a = 500;
-        var b = document.getElementById('jumlah').value;
-        var c = document.getElementById('uang').value;
-        var result = parseInt(a) * parseInt(b);
-        if (!isNaN(result)) {
-            document.getElementById('total').value = "$" + result;
+    var a = document.getElementById('harga').value;
+    var b = document.getElementById('jumlah_barang').value;
+    var total= parseInt(a) * parseInt(b);
+    var c = document.getElementById('jumlah_uang').value;
+    var d = parseInt(c) - total;
+        if (!isNaN(total)) {
+            document.getElementById('total').value = total;
+        } 
+        if (!isNaN(d) ) {
+            document.getElementById('kembalian').value = d;
+        } 
+}
+function klik() {
+    d = document.getElementById('kembalian').value;
+        if ( d >= 0){
+            alert("Transaksi Berhasil");
+        } else if ( d < 0){
+            alert("Uang Kurang : " + d);
+        } 
+        else {
+            alert("Transaksi Gagal");
         }
 }
 

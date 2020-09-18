@@ -114,6 +114,7 @@
                 </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <a class="btn btn-primary" href="buy.php" role="button">Buy</a>
                 </div>
             </div>
         </div>
