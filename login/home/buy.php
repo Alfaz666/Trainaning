@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Views</title>
+    <title>Buy</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
@@ -26,9 +26,6 @@
     }
     .container{
         background-color: rgba(250,250,250);
-    }
-    .cen{
-        text-align:center;
     }
     .spasi{
         height: 100px;
@@ -96,12 +93,13 @@
                 <th class="kol1"><p>Pilih Barang</p></th>
                 <th class="kol2">:</th>
                 <th><form>
-                        <label for="harga" class="pass">
-                            <select id="harga" name="harga" class="form-control">
-                                <option id="harga1" name="harga1" value="500" onclick="drop();">satu</option>
-                                <option id="harga2" name="harga2" value="400" onclick="drop();">dua</option>
-                                <option id="harga3" name="harga3" value="300" onclick="drop();">tiga</option>
-                                <option id="harga4" name="harga4" value="200" onclick="drop();">empat</option>
+                        <label for="harga" class="pass" >
+                            <select id="harga" name="harga" class="form-control" onclick="selek()">
+                                <option value="" selected>Pilih</option>
+                                <option value="500">satu</option>
+                                <option value="400">dua</option>
+                                <option value="300">tiga</option>
+                                <option value="200">empat</option>
                             </select>
                         </label>
                     </form>
@@ -110,7 +108,7 @@
             <tr>
                 <th><p>Harga Barang</p></th>
                 <th>:</th>
-                <th><input id="cul" class="form-control" readonly></tr>
+                <th><p id="cul" class="form-control" readonly></p></tr>
             <tr>
             <tr>
                 <th><p>Jumlah Barang</p></th>
@@ -134,7 +132,7 @@
             <tr>
                 <th></th>
                 <th></th>
-                <th style="float: right;"><button type="submit" name="submit" id="beli" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="klik()">Submit</button></th>
+                <th style="float: right;"><button type="submit" name="submit" id="beli" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="klik()" >Submit</button></th>
             </tr>
         </table>
     </div>
@@ -144,11 +142,16 @@
 
 
 <script>
-function drop(){
-    var satu = 500;
-        document.getElementById('cul').value = satu;
+
+// PILIH BARANG
+function selek(){
+    var x = document.getElementById('harga').value;
+    document.getElementById('cul').innerHTML = x;
 }
 
+
+
+// AUTO PERHITUNGAN
 function sum() {
     var a = document.getElementById('harga').value;
     var b = document.getElementById('jumlah_barang').value;
@@ -162,6 +165,9 @@ function sum() {
             document.getElementById('kembalian').value = d;
         } 
 }
+
+
+// SUBMIT ALERT
 function klik() {
     d = document.getElementById('kembalian').value;
         if ( d >= 0){
@@ -174,6 +180,18 @@ function klik() {
         }
 }
 
+
+// DISABLE SUBMIT
+$(function() {
+    $('button[type="submit"]').prop('disabled', true);
+    $('#jumlah_uang').on('input', function(e) {
+        if(this.value.length > 0) {
+            $('button[type="submit"]').prop('disabled', false);
+        } else {
+            $('button[type="submit"]').prop('disabled', true);
+        }
+    });
+});
 
 
 // MODAL OPEN MENU BAR 

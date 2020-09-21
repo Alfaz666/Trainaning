@@ -13,15 +13,7 @@
 		margin:0;
 		padding:0;
 	}
-	.kiri{
-        width: 100px;
-    }
-    .tengah{
-        width: 1400px;
-    }
-    .kanan{
-        width: 100px;
-    }
+
 	a{
 		font-size:24px
 	}
@@ -29,14 +21,10 @@
 		width:100%;
 		height:75px;
 	}
-	.spasia11{
-		width:100%;
-		height:500px;
-	}
 	.badan{
 		width:90%;
 		background-color:rgba(248,248,248);
-		height:700px;
+		height: auto;
 		border-radius:5px;
 		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 		overflow:hidden;
@@ -72,26 +60,21 @@
 			</svg> About</a>
 	</div>
 
-	<nav class="navbar" style="height:75px; background-color: rgba(30,30,30); color:white;">
-        <div class="container-fluid">
-            <div class="row justify-content-start">
-                <div class="kiri">
-                    <div class="float-left">
-                        <button id="openNav" type="button" class="btn btn-light" onclick="w3_open()">&#9776;</button>
-                    </div>
-                </div>
-                <div class="row justify-content-center">
-                    <div class="tengah" style="text-align: center; font-size:20px;"><b>Home</b></div>
-                </div>
-                <div class="row justify-content-end">
-                    <div class="kanan">
-                        <div class="float-right">
-                            <a href="../login.php" class="btn btn-light" role="button" aria-pressed="true" >Logout</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+	<nav class="navbar" style="height:75px; background-color: rgba(30,30,30); color:white; display: flex;s">
+	<div class="container-fluid">
+			<div class="justify-content-start" style="">
+				<div class="">
+					<button id="openNav" type="button" class="btn btn-light" onclick="w3_open()">&#9776;</button>
+				</div>
+			</div>
+				<div class="justify-content-center" style="text-align:center; font-size:20px; "><b>Home</b></div>
+			<div class="justify-content-end">
+				<div class="">
+					<a href="../login.php" class="btn btn-light" role="button" aria-pressed="true" >Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
     </nav>
 	<div class="spasia"></div>
 	<div class="container">
@@ -99,52 +82,49 @@
 	</div>
 	<div align="center">
 		<div class="badan">
-			<div class="row" style="float:left; margin:30px;">
-			<div class="col-sm-4">
-				<div class="card" style="width: 320px;">
-					<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+			<div class="d-flex justify-content-between">
+				<div class="row " style=" margin:30px;">
+				<div class="col-sm-4">
+					<div class="card" style="width: 320px;">
+						<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			</div>
-			<div class="row" style="float:left; margin:30px; margin-left:120px;">
-			<div class="col-sm-4">
-				<div class="card" style="width: 320px;">
-					<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+				<div class="row " style=" margin:30px;">
+				<div class="col-sm-4">
+					<div class="card" style="width: 320px;">
+						<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
 					</div>
 				</div>
-			</div>
-			</div>
-			<div class="row" style="float:right; margin:30px;">
-			<div class="col-sm-4">
-				<div class="card" style="width: 320px;">
-					<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
-					<div class="card-body">
-						<h5 class="card-title">Card title</h5>
-						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-						<a href="#" class="btn btn-primary">Go somewhere</a>
+				</div>
+				<div class="row " style=" margin:30px;">
+				<div class="col-sm-4">
+					<div class="card" style="width: 320px;">
+						<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
+						<div class="card-body">
+							<h5 class="card-title">Card title</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
 					</div>
 				</div>
+				</div>
 			</div>
-			</div>
-			<div class="spasia11"></div>
-			<div class="row" style=" margin-left:350px;">
-				<div class="col-sm-8">
-				<div class="card" >
+			<div class=""></div>
 					<h1>Lorem Ipsum Dolor ...</h1>
 					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam eos, saepe aliquam ad natus 
 					ab minima accusamus nesciunt tempore inventore quos consectetur eaque id corporis rerum neque 
 					ipsum magni consequatur!</p>
-				</div>
-				</div>
 			</div>
 		</div>
 	</div>
@@ -171,7 +151,6 @@ function w3_open() {
   document.getElementById("main").style.marginLeft = "0%";
   document.getElementById("mySidebar").style.width = "12%";
   document.getElementById("mySidebar").style.display = "block";
-  document.getElementById("openNav").style.display = 'none';
 }
 function w3_close() {
   document.getElementById("main").style.marginLeft = "0%";

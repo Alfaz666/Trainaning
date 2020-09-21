@@ -8,7 +8,19 @@
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 </head>
 <style>
-
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+    }
+    nav ul{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
     .kiri{
         width: 100px;
     }
@@ -41,6 +53,19 @@
                 </div>
             </div>
         </div>
+    </nav>
+    <br><br><br>
+
+    <nav class="baee">
+        <ul>
+            <li><button id="openNav" type="button" class="btn btn-light" onclick="w3_open()">&#9776;</button></li>
+        </ul>
+        <ul>
+            <li><p>Home</p></li>
+        </ul>
+        <ul>
+            <li><a href="../login.php" class="btn btn-light" role="button" aria-pressed="true" >Logout</a></li>
+        </ul>
     </nav>
 </body>
 </html>

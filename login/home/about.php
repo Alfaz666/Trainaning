@@ -14,11 +14,6 @@
 		margin:0;
 		padding:0;
   }
-  body{
-    background-image: url(gambar/back.png);
-    background-attachment: fixed;
-    background-size: cover;
-  }
 	.container-fluid{
 		background-color: rgba(248,248,248 );
 		padding:15px;
