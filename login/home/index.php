@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
 	*{
@@ -28,7 +28,14 @@
 		border-radius:5px;
 		box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.2);
 		overflow:hidden;
-		z-index:9999999;
+	}
+
+	/* FOR CARD */
+	#card1 , #card2 , #card3 {
+		cursor: pointer;
+	}
+	#show1 , #show2 , #show3 {
+		display: none;
 	}
 </style>
 <body>
@@ -48,7 +55,11 @@
 		<a href="../home/index.php" type="button" class="list-group-item list-group-item-action" ><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			<path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
 			<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-		</svg> Home</a>
+			</svg> Home</a>
+		<a href="../home/selling.php" type="button" class="list-group-item list-group-item-action"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" d="M8 1a2.5 2.5 0 0 0-2.5 2.5V4h5v-.5A2.5 2.5 0 0 0 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5v9a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V5H2z"/>
+			<path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+			</svg> Selling</a>
 		<a href="../home/views.php" type="button" class="list-group-item list-group-item-action"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-view-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 			<path fill-rule="evenodd" d="M3 4.5h10a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1H3zM1 2a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 2zm0 12a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13A.5.5 0 0 1 1 14z"/>
 			</svg> Views</a>
@@ -82,50 +93,60 @@
 	</div>
 	<div align="center">
 		<div class="badan">
-			<div class="d-flex justify-content-between">
+			<div class="d-flex justify-content-between" style="height:500px; background-image:url();">
 				<div class="row " style=" margin:30px;">
 				<div class="col-sm-4">
-					<div class="card" style="width: 320px;">
+					<div id="card1" class="card" style="width: 350px;">
 						<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
+						<div id="show1" class="card-body">
+							<h5 class="card-title">View Image Art</h5>
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+							<a href="../home/views.php" class="btn btn-primary">Go View Image Art</a>
 						</div>
 					</div>
 				</div>
 				</div>
 				<div class="row " style=" margin:30px;">
 				<div class="col-sm-4">
-					<div class="card" style="width: 320px;">
-						<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
+					<div id="card2" class="card" style="width: 350px;">
+						<img src="../gambar/undraw_data_processing_yrrv.png" class="card-img-top" alt="sjop">
+						<div id="show2" class="card-body">
+							<h5 class="card-title">Data Image Art</h5>
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+							<a href="#" class="btn btn-primary">Go Data Image Art</a>
 						</div>
 					</div>
 				</div>
 				</div>
 				<div class="row " style=" margin:30px;">
 				<div class="col-sm-4">
-					<div class="card" style="width: 320px;">
-						<img src="../gambar/undraw_web_shopping_dd4l.png" class="card-img-top" alt="sjop">
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
+					<div id="card3" class="card" style="width: 350px;">
+						<img src="../gambar/select.png" class="card-img-top" alt="sjop">
+						<div id="show3" class="card-body">
+							<h5 class="card-title">Buy Image Art</h5>
 							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-							<a href="#" class="btn btn-primary">Go somewhere</a>
+							<a href="../home/buy.php" class="btn btn-primary">Go Buy Image Art</a>
 						</div>
 					</div>
 				</div>
 				</div>
 			</div>
-			<div class=""></div>
-					<h1>Lorem Ipsum Dolor ...</h1>
-					<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam eos, saepe aliquam ad natus 
-					ab minima accusamus nesciunt tempore inventore quos consectetur eaque id corporis rerum neque 
-					ipsum magni consequatur!</p>
+			<div class="container-fluid" style=" background-color: white;">
+					<div class="tahap" style="text-align:left; padding: 20px;">
+						<h1><b>How to use Image Art</b></h1><br>
+						<p >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam eos, saepe aliquam ad natus 
+						ab minima accusamus nesciunt tempore inventore quos consectetur eaque id corporis rerum neque 
+						ipsum magni consequatur!Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam eos, 
+						saepe aliquam ad natus 
+						ab minima accusamus nesciunt tempore inventore quos consectetur eaque id corporis rerum neque 
+						ipsum magni consequatur :</p><br>
+						<p><b>1. Selling</b></p><p style=" padding: 0;">Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
+						<p><b>2. Input Image Art</b></p><p style=" padding: 0;">Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
+						<p><b>3. Buy Image Art</b></p><p style=" padding: 0;">Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
+						<p><b>4. Configuration Image Art</b></p><p style=" padding: 0;">Lorem, ipsum dolor sit amet consectetur adipisicing elit...</p>
+					</div>
 			</div>
+			<div class="spasia"></div> 
 		</div>
 	</div>
 
@@ -147,6 +168,7 @@
 	</div>
 
 <script>
+// OPEN MENU BAR
 function w3_open() {
   document.getElementById("main").style.marginLeft = "0%";
   document.getElementById("mySidebar").style.width = "12%";
@@ -157,6 +179,19 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
   document.getElementById("openNav").style.display = "inline-block";
 }
+
+// TOGGLE CARD
+$(document).ready(function(){
+	$("#card1").click(function(){
+		$("#show1").slideToggle();
+	});
+	$("#card2").click(function(){
+		$("#show2").slideToggle();
+	});
+	$("#card3").click(function(){
+		$("#show3").slideToggle();
+	});
+});
 </script>
 
 

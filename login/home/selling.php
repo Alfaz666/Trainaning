@@ -3,58 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buy</title>
+    <title>Selling</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
     *{
 		margin:0;
-		padding:0;
+        padding:0;
         font-family: Arial;
     }
     body{
         background-image: url("../gambar/bg-buy.svg");
         background-size:cover;
     }
-	.container-fluid{
+    a{
+		font-size:24px
+    }
+	.container-fluid {
 		background-color: rgba(248,248,248 );
 		padding:15px;
 		position:fixed;
 	}
-	a{
-		font-size:24px
-    }
-    .container{
-        background-color: rgba(250,250,250);
-    }
-    .spasi{
-        height: 100px;
-    }
-    .pass{
-        width: 825px;
-    }
-    .kol1{
-        width: 200px;
-    }
-    .kol2{
-        width: 10px;
-        text-align: right;
-    }
 </style>
 <body>
-	<?php 
+    <?php 
 	session_start();
 	if($_SESSION['status']!="login"){
 		header("location:../login.php?pesan=belum_login");
 	}
-	?>
+    ?>
+    
 	<div id="main">
-
-	<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
 		<button class="w3-bar-item w3-button w3-large"
 		onclick="w3_close()"> <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
 		<path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
@@ -85,7 +68,7 @@
 					<button id="openNav" type="button" class="btn btn-light" onclick="w3_open()">&#9776;</button>
 				</div>
 			</div>
-				<div class="col-6 col-md-4" style="text-align:center; font-size:20px;"><b>Buy</b></div>
+				<div class="col-6 col-md-4" style="text-align:center; font-size:20px;"><b>Selling</b></div>
 			<div class="col-6 col-md-4">
 				<div class="float-right">
 					<a href="../login.php" class="btn btn-light" role="button" aria-pressed="true" >Logout</a>
@@ -93,122 +76,31 @@
 			</div>
 		</div>
 	</div>
-    <div class="spasi"></div>
-    <div class="container" style="padding:30px; border:1px solid grey; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.2); border-radius: 7px;">
-        <h1 style="text-align: center;">Form Pembelian</h1>
-        <table class="table">
-            <tr>
-                <th class="kol1"><p>Pilih Barang</p></th>
-                <th class="kol2">:</th>
-                <th><form>
-                        <label for="harga" class="pass" >
-                            <select id="harga" name="harga" class="form-control" onclick="selek()">
-                                <option value="" selected>Pilih</option>
-                                <option value="500">satu</option>
-                                <option value="400">dua</option>
-                                <option value="300">tiga</option>
-                                <option value="200">empat</option>
-                            </select>
-                        </label>
-                    </form>
-                </th>
-            </tr>
-            <tr>
-                <th><p>Harga Barang</p></th>
-                <th>:</th>
-                <th><p id="cul" class="form-control" readonly></p></tr>
-            <tr>
-            <tr>
-                <th><p>Jumlah Barang</p></th>
-                <th class="kol2">:</th>
-                <th><input  name="jumlah_barang" id="jumlah_barang" class="form-control" onkeyup="sum();"></th>
-            </tr>
-                <th><p>Total</p></th>
-                <th class="kol2">:</th>
-                <th><input name="total" id="total" class="form-control" readonly></th>
-            </tr>
-            <tr>
-                <th><p>Jumlah Uang</p></th>
-                <th class="kol2">:</th>
-                <th><input name="jumlah_uang" id="jumlah_uang" class="form-control" onkeyup="sum();"></th>
-            </tr>
-            <tr>
-                <th><p>Kembalian</p></th>
-                <th class="kol2">:</th>
-                <th><input name="kembalian" id="kembalian" class="form-control" readonly></th>
-            </tr>
-            <tr>
-                <th></th>
-                <th></th>
-                <th style="float: right;"><button type="submit" name="submit" id="beli" class="btn btn-primary" data-toggle="modal" data-target="#myModal" onclick="klik()" >Submit</button></th>
-            </tr>
+    <div class="container">
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th></th>
+                </tr>
+            </tbody>
         </table>
     </div>
 
-                  
-
-
 
 <script>
-
-// PILIH BARANG
-function selek(){
-    var x = document.getElementById('harga').value;
-    document.getElementById('cul').innerHTML = x;
-}
-
-
-
-// AUTO PERHITUNGAN
-function sum() {
-    var a = document.getElementById('harga').value;
-    var b = document.getElementById('jumlah_barang').value;
-    var total= parseInt(a) * parseInt(b);
-    var c = document.getElementById('jumlah_uang').value;
-    var d = parseInt(c) - total;
-        if (!isNaN(total)) {
-            document.getElementById('total').value = total;
-        } 
-        if (!isNaN(d) ) {
-            document.getElementById('kembalian').value = d;
-        } 
-}
-
-
-// SUBMIT ALERT
-function klik() {
-    d = document.getElementById('kembalian').value;
-        if ( d >= 0){
-            alert("Transaksi Berhasil");
-        } else if ( d < 0){
-            alert("Uang Kurang : " + d);
-        } 
-        else {
-            alert("Transaksi Gagal");
-        }
-}
-
-
-// DISABLE SUBMIT
-$(function() {
-    $('button[type="submit"]').prop('disabled', true);
-    $('#jumlah_uang').on('input', function(e) {
-        if(this.value.length > 0) {
-            $('button[type="submit"]').prop('disabled', false);
-        } else {
-            $('button[type="submit"]').prop('disabled', true);
-        }
-    });
-});
-
-
 // MODAL OPEN MENU BAR 
 function w3_open() {
+document.getElementById("main").style.marginLeft = "0%";
 document.getElementById("mySidebar").style.width = "12%";
 document.getElementById("mySidebar").style.display = "block";
-document.getElementById("openNav").style.display = 'none';
 }
 function w3_close() {
+document.getElementById("main").style.marginLeft = "0%";
 document.getElementById("mySidebar").style.display = "none";
 document.getElementById("openNav").style.display = "inline-block";
 }
