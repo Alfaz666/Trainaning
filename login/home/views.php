@@ -1,3 +1,9 @@
+<?php 
+include('../koneksi.php');
+$query = mysqli_query($koneksi,"select * from tb_gambar");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,6 +39,9 @@
         background-color: rgba(250,250,250);
     }
     .cen{
+        text-align:center;
+    }
+    th{
         text-align:center;
     }
 </style>
@@ -85,31 +94,49 @@
 		</div>
 	</div>
     <div class="spasi" style="height:100px;"></div>
-    <div class="container" >
-        <div class="row" align="center">
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
+    <div align="center"><a  type="button" href="selling.php" class="btn btn-primary">Selling Image Art</a></div>
+    <div class="spasi" style="height:50px;"></div>
+        <div class="container" style="padding:30px; border:1px solid grey; box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2), 0 3px 3px 0 rgba(0, 0, 0, 0.2); border-radius: 7px;">
+        <table class="table" style="text-align:center;">
+            <tr>
+                <th>No</th>
+                <th>Gambar</th>
+                <th>Keterangan</th>
+                <th>Tipe</th>
+                <th>Ukuran</th>
+                <th>Action</th>
+            </tr>
+            <?php 
+            $no = 1;
+            while($row = mysqli_fetch_array($query))
+            {
+                ?>
+                <tr>
+                    <td><?php echo $no++; ?></td>
+                    <td><img src="files/<?php echo $row['gambar']; ?>" width="100"/></td>
+                    <td><?php echo $row['keterangan']; ?></td>
+                    <td><?php echo $row['tipe_gambar']; ?></td>
+                    <td><?php echo $row['ukuran_gambar']; ?></td>
+                    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View</button>
+                        <a type="button" class="btn " style="background-color:red; color:white;" href="delete_gambar.php?id_gambar=<?php echo $row['id_gambar']; ?>">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+                        </svg>
+                        </a>
+                    </td>
+                </tr>
+                <?php
+            }
+            ?>
+        </table>
+        </div>
+        <div class="spasi" style="height:100px;"></div>
+        <div align="center">
+            <div style=" width:20%; border: 1px solid grey; border-radius: 5px; padding: 5px;">
                 <img src="../gambar/kartun/bobpat.png" alt="1" width="70%">
                 <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View</button>
             </div>
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
-                <img src="../gambar/kartun/crab.png" alt="2" width="70%">
-                <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal2">View</button>
-            </div>
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
-                <img src="../gambar/kartun/Hoopla-bata.png" alt="3" width="70%">
-                <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal3">View</button>
-            </div>
-            <div class="col-md-3" style="border: 1px solid grey; border-radius: 5px; padding: 5px;">
-                <img src="../gambar/kartun/Hoopla.png" alt="4" width="70%">
-                <br><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal4">View</button>
-            </div>
         </div>
-        <table>
-            <tr>
-                <th></th>
-            </tr>
-        </table>
-    </div>
 
 
     <!-- OPEN MODAL!!! -->
@@ -125,70 +152,35 @@
                     Sapiente id dolore est, ut ipsam magnam harum, ratione enim qui dolor cumque quia quod repellendus 
                     voluptatibus omnis. Nesciunt, molestiae!
                 </div>
-                    <div class="modal-footer">
+                <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     <a class="btn btn-primary" href="buy.php" role="button">Buy</a>
                 </div>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="myModal2" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header"><p style="font-size:24px;">Mr.Crab</p>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" align="center">
-                    <img src="../gambar/kartun/crab.png" alt="2">
-                    <br>Mr.Crab Is Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, porro. 
-                    Sapiente id dolore est, ut ipsam magnam harum, ratione enim qui dolor cumque quia quod repellendus 
-                    voluptatibus omnis. Nesciunt, molestiae!
-                </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="myModal3" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header"><p style="font-size:24px;">Hoopla-Bata</p>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" align="center">
-                    <img src="../gambar/kartun/Hoopla-bata.png" alt="3" >
-                    <br>Mr.Crab Is Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, porro. 
-                    Sapiente id dolore est, ut ipsam magnam harum, ratione enim qui dolor cumque quia quod repellendus 
-                    voluptatibus omnis. Nesciunt, molestiae!
-                </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="myModal4" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header"><p style="font-size:24px;">Hoopla</p>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                <div class="modal-body" align="center">
-                    <img src="../gambar/kartun/Hoopla.png" alt="4" >
-                    <br>Mr.Crab Is Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus, porro. 
-                    Sapiente id dolore est, ut ipsam magnam harum, ratione enim qui dolor cumque quia quod repellendus 
-                    voluptatibus omnis. Nesciunt, molestiae!
-                </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
-                  
-
+    <div class="modal fade" id="hapus" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" align="center">
+					<div class="spasi" style="height:20px;"></div>
+					<svg width="7em" height="7em" color="red" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+					<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+					</svg>
+					<div class="spasi" style="height:20px;"></div>
+					<p style="font-size:24px; text-align:center;">Gagal Upload!</p>
+				</div>
+				<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+			</div>
+		</div>
+	</div>
 
 
 <script>

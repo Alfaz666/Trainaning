@@ -1,3 +1,25 @@
+<?php 
+	include('../koneksi.php');
+	if(isset($_POST['tombol']))
+	{
+		$temp = $_FILES['gambar']['tmp_name'];
+		$name = rand(0,9999).$_FILES['gambar']['name'];
+		$size = $_FILES['gambar']['size'];
+		$type = $_FILES['gambar']['type'];
+		$keterangan = $_POST['keterangan'];
+		$folder = "files/";
+		if ($size < 2048000 and ($type =='image/jpeg' or $type == 'image/png' or $type == 'image/jpeg')) {
+			move_uploaded_file($temp, $folder . $name);
+			mysqli_query($koneksi, "insert into tb_gambar (gambar,keterangan,tipe_gambar,ukuran_gambar) values ('$name','$keterangan','$type','$size')");
+			header('location:views.php');
+		}else{
+			echo "<script>alert('Gagal mengUpload')</script>";
+			//header('location:selling.php');
+		}
+	}
+	?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +28,10 @@
     <title>Selling</title>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <style>
     *{
@@ -27,6 +51,12 @@
 		padding:15px;
 		position:fixed;
 	}
+	#pilih{
+		border:1px solid grey;
+		border-radius:4px;
+		width:100%;
+		padding:5px;
+	}
 </style>
 <body>
     <?php 
@@ -34,7 +64,10 @@
 	if($_SESSION['status']!="login"){
 		header("location:../login.php?pesan=belum_login");
 	}
-    ?>
+	?>
+	
+	
+
     
 	<div id="main">
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
@@ -76,21 +109,55 @@
 			</div>
 		</div>
 	</div>
-    <div class="container">
-        <table>
-            <thead>
-                <tr>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th></th>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+	<div class="spasi" style="height:100px;"></div>
+	<div class="container shadow p-3 mb-5 bg-white rounded" style="background-color:white; padding:10px; border-radius:5px;">
+		<h1 style="text-align:center;"><b>Jual Disini</b></h1>
+		<form method="post" action="" enctype="multipart/form-data">
+			<table class="table">
+				<tr>
+					<td>Gambar</td>
+					<td>:</td>
+					<td><input type="file" name="gambar" id="pilih"/></td>
+				</tr>
+				<tr>
+					<td>Keterangan</td>
+					<td>:</td>
+					<td><textarea class="form-control" name="keterangan"></textarea></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>
+					<td><input type="submit" name="tombol" class="btn btn-primary" data-toggle="modal" data-target="#myModal"/></td>
+				</tr>
+			</table>
+        </form>
+	</div>
+	
+	
+	<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">View</button> -->
 
+	<!-- OPEN MODAL ! ! !-->
+	<!--<div class="modal fade" id="mymodal" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body" align="center">
+					<div class="spasi" style="height:20px;"></div>
+					<svg width="7em" height="7em" color="red" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+					<path fill-rule="evenodd" d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+					</svg>
+					<div class="spasi" style="height:20px;"></div>
+					<p style="font-size:24px; text-align:center;">Gagal Upload!</p>
+				</div>
+				<div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+                </div>
+			</div>
+		</div>
+	</div>-->
 
 <script>
 // MODAL OPEN MENU BAR 
