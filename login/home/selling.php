@@ -52,7 +52,7 @@
 		position:fixed;
 	}
 	#pilih{
-		border:1px solid grey;
+		border:1px solid rgba(200, 200, 200);
 		border-radius:4px;
 		width:100%;
 		padding:5px;

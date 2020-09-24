@@ -1,0 +1,81 @@
+{
+    "menu": [
+        {
+            "kategori"  : "spongebob",
+            "nama"      : "bob",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 5000,
+            "gambar"    : "reg-sandar.png"
+        },
+        {
+            "kategori"  : "spongebob",
+            "nama"      : "bobob",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 7000,
+            "gambar"    : "log-sandar.png"
+        },
+        {
+            "kategori"  : "spongebob",
+            "nama"      : "dua",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 10000,
+            "gambar"    : "bobpat.png"
+        },
+        {
+            "kategori"  : "spongebob",
+            "nama"      : "satu",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 8000,
+            "gambar"    : "patbob.png"
+        },
+        {
+            "kategori"  : "spongebob",
+            "nama"      : "spong",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 14000,
+            "gambar"    : "spong.png"
+        },
+        {
+            "kategori"  : "patrick",
+            "nama"      : "naah",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 12000,
+            "gambar"    : "patrick.png"
+        },
+        {
+            "kategori"  : "patrick",
+            "nama"      : "niih",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 15000,
+            "gambar"    : "patrik.png"
+        },
+        {
+            "kategori"  : "garry",
+            "nama"      : "low",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 5000,
+            "gambar"    : "ger.jpg"
+        },
+        {
+            "kategori"  : "garry",
+            "nama"      : "slow",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 5000,
+            "gambar"    : "gir.png"
+        },
+        {
+            "kategori"  : "hoopla",
+            "nama"      : "hoop",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 2000,
+            "gambar"    : "Hoopla.png"
+        },
+        {
+            "kategori"  : "hoopla",
+            "nama"      : "laa",
+            "deskripsi" : "lorem ipsum dolor ...",
+            "harga"     : 3000,
+            "gambar"    : "Hoopla-bata.png"
+        }
+    ]
+}
